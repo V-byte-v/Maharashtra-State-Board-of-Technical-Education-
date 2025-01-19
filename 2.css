@@ -1,36 +1,60 @@
+/* Full Page Styling */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff7b00, #ff0066);
-    color: white;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    font-family: 'Arial', sans-serif;
     overflow: hidden;
 }
 
-.center-content {
+/* Background Container for Particles */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Canvas for Particle Effect */
+canvas {
+    display: block;
+}
+
+/* Container for 3D Animation */
+.animated-container {
+    perspective: 1000px;
     text-align: center;
 }
 
-h1 {
-    font-size: 80px;
+/* 3D Animated Text */
+.animated-text {
+    font-size: 60px;
+    color: white;
+    text-transform: uppercase;
     font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    margin: 0;
-    animation: fadeIn 2s ease-in-out;
+    animation: textAnimation 3s infinite;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -3px -3px 10px rgba(255, 255, 255, 0.2);
+    transform: rotateX(20deg) rotateY(15deg);
 }
 
-/* Animation for the text */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
+/* Keyframe Animation */
+@keyframes textAnimation {
+    0% {
+        transform: rotateX(20deg) rotateY(15deg);
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -3px -3px 10px rgba(255, 255, 255, 0.2);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    50% {
+        transform: rotateX(-20deg) rotateY(-15deg);
+        text-shadow: -3px -3px 15px rgba(0, 0, 0, 0.5), 3px 3px 15px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        transform: rotateX(20deg) rotateY(15deg);
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7), -3px -3px 10px rgba(255, 255, 255, 0.2);
     }
 }

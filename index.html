@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>msbt</title>
+    <title>Maharashtra State Board of Technical Education</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,10 +11,22 @@
         <h1>Maharashtra State Board of Technical Education
 महाराष्ट्र राज्य तंत्र शिक्षण मंडळ, मुंबई</h1>
         <form id="resultForm">
+            <!-- Dropdown for Enrollment or Seat Number -->
             <div class="form-group">
-                <label for="enrollment">Enrollment Number:</label>
-                <input type="text" id="enrollment" name="enrollment" placeholder="Enter your enrollment number" required>
+                <label for="optionSelect">Choose an Option:</label>
+                <select id="optionSelect" name="optionSelect">
+                    <option value="enrollment">Enrollment Number</option>
+                    <option value="seat">Seat Number</option>
+                </select>
             </div>
+
+            <!-- Input Field for Enrollment or Seat Number -->
+            <div class="form-group">
+                <label for="inputField" id="inputLabel">Enrollment Number:</label>
+                <input type="text" id="inputField" name="inputField" placeholder="Enter your enrollment number" required>
+            </div>
+
+            <!-- Captcha Field -->
             <div class="form-group">
                 <label for="captcha">Captcha:</label>
                 <div class="captcha-group">
@@ -22,7 +34,9 @@
                     <button type="button" id="refresh-captcha">🔄</button>
                 </div>
                 <input type="text" id="captcha-input" name="captcha" placeholder="Enter captcha" required>
-            </div> 
+            </div>
+
+            <!-- View Results Button -->
             <button type="submit" class="view-result-btn"<a href="2.html">View Results</button>
         </form>
     </div>
